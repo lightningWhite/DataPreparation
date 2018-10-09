@@ -108,18 +108,18 @@ def main():
     isRegression = False
     
     # Uncomment one of the following functions for the desired data
-#    data, targets = get_car_data()
+    data, targets = get_car_data()
 #    data, targets = get_autism_data()
 
     # Since this is regression data, uncomment the isRegression = True line
     # and comment out the data = preprocessing.scale(data) line. I don't think 
     # it should be scaled for continuous data - and the accuracy shows that
-    data, targets = get_mpg_data()
-    isRegression = True # uncomment this line for mpg data
+#    data, targets = get_mpg_data()
+#    isRegression = True # uncomment this line for mpg data
 
     # Normalize the data
     std_scaler = preprocessing.StandardScaler().fit(data)
-#    data = preprocessing.scale(data)
+    data = preprocessing.scale(data)
      
     # Get the predicted targets
     print("Testing...")
